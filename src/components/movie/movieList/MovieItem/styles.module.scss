@@ -1,0 +1,68 @@
+.movieItem {
+  position: relative;
+  display: flex;
+  height: 400px;
+  perspective: 500px;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 45px 15px;
+
+  &:hover {
+    .card {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+
+    > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--card-radius);
+      backface-visibility: hidden;
+      overflow: hidden;
+    }
+
+    .cardBack {
+      transform: rotateY(180deg);
+
+      .description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .descriptionInner {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+          font-size: 1.25rem;
+          margin-bottom: 15px;
+
+          .title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.8rem;
+            font-family: 'Permanent Marker', cursive;
+          }
+
+          .year {
+            color: var(--light-gray);
+          }
+        }
+      }
+    }
+  }
+}
