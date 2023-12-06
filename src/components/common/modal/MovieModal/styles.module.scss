@@ -1,0 +1,48 @@
+.movieModal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: auto;
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .moviePoster {
+      width: 300px;
+      aspect-ratio: 5/7;
+      margin: auto;
+      background-color: var(--border-color);
+      overflow: hidden;
+      border-radius: var(--card-radius);
+    }
+
+    .movieInfo {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      .movieTitle {
+        .title {
+          font-size: 1.4rem;
+          font-weight: 600;
+        }
+
+        .released {
+          text-align: right;
+        }
+      }
+
+      .movieDescription {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 15px;
+      }
+    }
+  }
+}
