@@ -1,0 +1,28 @@
+.mainHeader {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--max-width);
+  height: var(--header-height);
+  z-index: 10;
+  background-color: var(--transparent-background);
+
+  .headerInner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 0 20px;
+
+    .title {
+      font-family: 'Permanent Marker', cursive;
+      color: var(--primary);
+      font-size: 2rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+}
