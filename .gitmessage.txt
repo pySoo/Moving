@@ -1,0 +1,11 @@
+# <TYPE> : <TITLE> Commit Guidelines
+
+################
+# [feat] : add new features
+# [fix] : fix bug
+# [docs] : modify document
+# [test] : add test code
+# [refactor] : refeactor the code
+# [style] : code styling
+# [chore] : build section or package manager modifications
+################
