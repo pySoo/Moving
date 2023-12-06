@@ -1,0 +1,24 @@
+.movieRatingList {
+  width: 100%;
+  margin-top: 15px;
+
+  .ratingList {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: auto;
+
+    .ratingBox {
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 8px;
+      padding: 10px;
+      line-height: 1.5rem;
+      box-shadow: var(--box-shadow);
+    }
+  }
+}
