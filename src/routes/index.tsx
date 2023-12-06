@@ -1,6 +1,9 @@
+import { lazy } from 'react';
+
 import ErrorElement from '@/components/common/ErrorElement';
-import MovieListSection from '@/components/movie/movieList/MovieListSection';
 import Layout from '@/pages/_layout';
+
+const MovieListSection = lazy(() => import('../components/movie/movieList/MovieListSection'));
 
 export const routes = [
   {
