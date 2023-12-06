@@ -1,0 +1,35 @@
+@import './reset.scss';
+
+body {
+  --tablet-size: 768px;
+  --desktop-size: 1024px;
+  --max-width: var(--desktop-size);
+  --header-height: 64px;
+
+  --card-radius: 12px;
+  --tag-radius: 8px;
+  --box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  --border-color: #ddd;
+  --background: #000;
+  --transparent-background: rgba(0, 0, 0, 0.85);
+
+  --dark-gray: #191919;
+  --gray: #4d4d4d;
+  --light-gray: #b3b3b3;
+
+  --white: #fff;
+  --primary: #ff163c;
+
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.02rem;
+  line-height: 1.25rem;
+  background-color: var(--background);
+  color: var(--white);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
