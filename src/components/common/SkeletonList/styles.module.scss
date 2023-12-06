@@ -1,0 +1,17 @@
+.skeletonList {
+  position: relative;
+  height: 310px;
+  margin: 45px 15px;
+  background-color: var(--gray);
+  border-radius: var(--card-radius);
+  background: linear-gradient(120deg, #b7b7b7 30%, #c5c5c5 38%, #c5c5c5 40%, #b7b7b7 48%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: shine 1s infinite;
+
+  @keyframes shine {
+    100% {
+      background-position: -100% 0;
+    }
+  }
+}
