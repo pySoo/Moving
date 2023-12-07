@@ -26,7 +26,7 @@ export default function MovieListSection() {
   const movieId = searchParams.get('movieId');
 
   const fetchNextData = async () => {
-    if (!keyword || isScrollEnd) return;
+    if (!keyword || isLoading || isScrollEnd) return;
 
     setMovieState((prevState) => ({ ...prevState, isLoading: true }));
     const { Search, totalResults }: MovieListResponse = await fetchMoreMovieList({
