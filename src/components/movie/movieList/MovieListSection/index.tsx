@@ -31,7 +31,7 @@ export default function MovieListSection() {
     setMovieState((prevState) => ({ ...prevState, isLoading: true }));
     const { Search, totalResults }: MovieListResponse = await fetchMoreMovieList({
       keyword,
-      page,
+      page: page + 1,
     });
     setMovieState((prevState) => ({ ...prevState, isLoading: false }));
 
