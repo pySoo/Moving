@@ -20,7 +20,7 @@ export default function MovieListSection() {
 
   const { movieList, keyword, page, isScrollEnd, isLoading } = movieState;
 
-  const { openModal } = useModal();
+  const { openModal, closeModal } = useModal();
 
   const [searchParams] = useSearchParams();
   const movieId = searchParams.get('movieId');
@@ -50,6 +50,8 @@ export default function MovieListSection() {
   useEffect(() => {
     if (movieId != null) {
       openModal({ type: ModalType.MOVIE_DETAIL });
+    } else {
+      closeModal({ type: ModalType.MOVIE_DETAIL });
     }
   }, [movieId]);
 
