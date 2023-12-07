@@ -1,8 +1,12 @@
+import { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
 import { movieAtom } from '@/atoms/movie';
 import MovieLoadingBar from '@/components/common/MovieLoadingBar';
+import { useModal } from '@/hooks/useModal';
 import { fetchMoreMovieList } from '@/services/movie';
+import { ModalType } from '@/types/modalTypes';
 import { MovieListResponse } from '@/types/movieTypes';
 
 import DefaultMovieList from '../DefaultMovieList';
@@ -15,6 +19,11 @@ export default function MovieListSection() {
   const [movieState, setMovieState] = useRecoilState(movieAtom);
 
   const { movieList, keyword, page, isScrollEnd, isLoading } = movieState;
+
+  const { openModal } = useModal();
+
+  const [searchParams] = useSearchParams();
+  const movieId = searchParams.get('movieId');
 
   const fetchNextData = async () => {
     if (!keyword || isScrollEnd) return;
@@ -37,6 +46,12 @@ export default function MovieListSection() {
       }));
     }
   };
+
+  useEffect(() => {
+    if (movieId != null) {
+      openModal({ type: ModalType.MOVIE_DETAIL });
+    }
+  }, [movieId]);
 
   return (
     <section className={styles.movieListSection}>
