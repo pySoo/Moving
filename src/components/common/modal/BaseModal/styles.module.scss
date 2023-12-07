@@ -26,7 +26,7 @@
     width: calc(100vw - 40px);
     max-width: 800px;
     min-height: 565px;
-    max-height: calc(100vh - var(--header-height) - 40px);
+    max-height: calc(100vh - var(--header-height));
     border-radius: 6px;
     background-color: var(--white);
     position: relative;
