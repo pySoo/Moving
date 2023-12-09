@@ -2,8 +2,6 @@ import { useNavigate } from 'react-router-dom';
 
 import GradientTag from '@/components/common/GradientTag';
 import MoviePoster from '@/components/movie/MoviePoster';
-import { useModal } from '@/hooks/useModal';
-import { ModalType } from '@/types/modalTypes';
 import { Movie } from '@/types/movieTypes';
 
 import styles from './styles.module.scss';
@@ -15,12 +13,8 @@ interface MovieListItemProps {
 export default function MovieListItem({ movie }: MovieListItemProps) {
   const navigate = useNavigate();
 
-  const { openModal } = useModal();
-
   const handleOpenMovieModal = () => {
     navigate(`/?movieId=${movie.imdbID}`);
-
-    openModal({ type: ModalType.MOVIE_DETAIL });
   };
 
   return (
