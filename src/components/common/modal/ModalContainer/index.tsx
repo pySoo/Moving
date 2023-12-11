@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { useRecoilValue } from 'recoil';
 
@@ -5,6 +6,7 @@ import { modalAtom } from '@/atoms/modal';
 import { useModal } from '@/hooks/useModal';
 import { ModalStateType } from '@/types/modalTypes';
 
+import LoadSpinner from '../../LoadSpinner';
 import BaseModal from '../BaseModal';
 import { MODAL_COMPONENTS } from './modals';
 
@@ -23,7 +25,9 @@ export default function ModalContainer() {
     const ModalComponent = MODAL_COMPONENTS[type];
     return (
       <BaseModal key={type} type={type} onClose={closeModal} {...props}>
-        <ModalComponent />
+        <Suspense fallback={<LoadSpinner />}>
+          <ModalComponent />
+        </Suspense>
       </BaseModal>
     );
   });
